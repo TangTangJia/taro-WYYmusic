@@ -1,0 +1,48 @@
+.login{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #C20C0C;
+  .logo{
+    width: 284px;
+    height: 50px;
+  }
+  .content{
+    position: absolute;
+    text-align: center;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .form{
+    .phone,.pwd{
+      display: flex;
+      align-items: center;
+    }
+    .phone{
+      margin-top: 100px;
+      margin-bottom: 30px;
+    }
+    .num,.password{
+      width: 420px;
+      height: 60px;
+      text-align: left;
+      padding-left: 20px;
+      margin-left: 20px;
+      border:1px solid #eeeeee;
+      border-radius: 10px;
+    }
+  }
+  .btn-login{
+    width: 550px;
+    height: 60px;
+    color: #C20C0C;
+    font-weight: bold;
+    text-align: center;
+    line-height: 60px;
+    margin-top: 100px;
+    background-color: #ffffff;
+    // border:2px solid #ffffff;
+    border-radius: 50px;
+  }
+}
