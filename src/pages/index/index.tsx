@@ -77,7 +77,14 @@ export default class Index extends Component<{}, PageState> {
         <View className='top'>
           {/* 轮播 */}
           <View className='banner'>
-            <Swiper className='banner_list' indicatorColor='#999' indicatorActiveColor='#d43c33' circular indicatorDots autoplay>
+            <Swiper
+              className='banner_list'
+              indicatorColor='#999'
+              indicatorActiveColor='#d43c33'
+              circular
+              indicatorDots
+              autoplay
+            >
               {
                 this.state.bannerList.map(item =>
                   <SwiperItem key={item.bannerId} className='banner_list__item'>
