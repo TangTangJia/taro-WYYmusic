@@ -1,5 +1,6 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text, Image, Swiper, SwiperItem } from '@tarojs/components'
+import { AtTabBar } from 'taro-ui'
 import './index.scss'
 
 interface PageState {
@@ -7,17 +8,26 @@ interface PageState {
     pic: string;
     bannerId: string;
   }>;
+  songLists: Array<{
+    name: string;
+    id: number;
+    coverImgUrl: string;
+  }>;
+  current: number;
 }
 export default class Index extends Component<{}, PageState> {
 
   constructor(props) {
     super(props)
     this.state = {
-      bannerList: []
+      bannerList: [],
+      songLists: [],
+      current: 0
     }
   }
   componentWillMount() {
     this.getBanner()
+    this.getHotSongs()
   }
 
   componentDidMount() { }
@@ -27,6 +37,7 @@ export default class Index extends Component<{}, PageState> {
   componentDidShow() { }
 
   componentDidHide() { }
+  // 获取轮播
   getBanner = () => {
     Taro.request({
       url: 'http://localhost:3000/banner?type=2',
@@ -41,6 +52,22 @@ export default class Index extends Component<{}, PageState> {
         })
       })
   }
+  // 获取热门歌单
+  getHotSongs = () => {
+    Taro.request({
+      url: 'http://localhost:3000/top/playlist?limit=9',
+      header: {
+        'content-type': 'application/json'
+      }
+    })
+      .then(res => {
+        console.log(res.data)
+        this.setState({
+          songLists: res.data.playlists
+        })
+      })
+  }
+  handleClick = () => { }
   config: Config = {
     navigationBarTitleText: '首页'
   }
@@ -103,6 +130,40 @@ export default class Index extends Component<{}, PageState> {
         </View>
         {/* 分割线 */}
         <View className='line'></View>
+        {/* 推荐歌单 */}
+        <View className='songs'>
+          <View className='title'>
+            <View className='big-title'>推荐歌单</View>
+            <View className='sub-title'>歌单广场</View>
+          </View>
+          <View className='card-list'>
+            {
+              this.state.songLists.map(v => {
+                return <View className='card' key={v.id}>
+                  <Image src={v.coverImgUrl} className='cover' />
+                  <Text className='name'>{v.name}</Text>
+                </View>
+              })
+            }
+          </View>
+        </View>
+        {/* footer */}
+        <View className='footer'>
+          <AtTabBar
+            fixed
+            backgroundColor='#efeeee'
+            selectedColor='#e0a5a4'
+            tabList={[
+              { title: '发现', image: require('../../assets/images/temp/find.png'), dot: true },
+              { title: '视频', image: require('../../assets/images/temp/tv.png') },
+              { title: '我的', image: require('../../assets/images/temp/my.png'), dot: true },
+              { title: '朋友', image: require('../../assets/images/temp/friend.png') },
+              { title: '账号', image: require('../../assets/images/temp/account.png') }
+            ]}
+            onClick={this.handleClick}
+            current={this.state.current}
+          />
+        </View>
       </View>
     )
   }
