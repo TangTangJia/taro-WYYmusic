@@ -1,6 +1,6 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text, Image, Swiper, SwiperItem } from '@tarojs/components'
-import { AtTabBar } from 'taro-ui'
+import Footer from "../../components/Footer"
 import './index.scss'
 
 interface PageState {
@@ -67,7 +67,7 @@ export default class Index extends Component<{}, PageState> {
         })
       })
   }
-  handleClick = () => { }
+
   config: Config = {
     navigationBarTitleText: '首页'
   }
@@ -77,14 +77,7 @@ export default class Index extends Component<{}, PageState> {
         <View className='top'>
           {/* 轮播 */}
           <View className='banner'>
-            <Swiper
-              className='banner_list'
-              indicatorColor='#999'
-              indicatorActiveColor='#d43c33'
-              circular
-              indicatorDots
-              autoplay
-            >
+            <Swiper className='banner_list' indicatorColor='#999' indicatorActiveColor='#d43c33' circular indicatorDots autoplay>
               {
                 this.state.bannerList.map(item =>
                   <SwiperItem key={item.bannerId} className='banner_list__item'>
@@ -149,20 +142,7 @@ export default class Index extends Component<{}, PageState> {
         </View>
         {/* footer */}
         <View className='footer'>
-          <AtTabBar
-            fixed
-            backgroundColor='#efeeee'
-            selectedColor='#e0a5a4'
-            tabList={[
-              { title: '发现', image: require('../../assets/images/temp/find.png'), dot: true },
-              { title: '视频', image: require('../../assets/images/temp/tv.png') },
-              { title: '我的', image: require('../../assets/images/temp/my.png'), dot: true },
-              { title: '朋友', image: require('../../assets/images/temp/friend.png') },
-              { title: '账号', image: require('../../assets/images/temp/account.png') }
-            ]}
-            onClick={this.handleClick}
-            current={this.state.current}
-          />
+          <Footer />
         </View>
       </View>
     )
