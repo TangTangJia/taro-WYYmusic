@@ -43,6 +43,9 @@ export default class Recommend extends Component<{}, PageState> {
           this.state.mvList.map(item => {
             return <View className='item' key={item.id}>
               <View className='cover' style={{ backgroundImage: `url(${item.cover})` }}>
+                <View className='btn-play'>
+                  <Image src={require('../../../assets/images/ajf.png')} className='play' />
+                </View>
               </View>
               <View className='title'>{item.name}</View>
             </View>

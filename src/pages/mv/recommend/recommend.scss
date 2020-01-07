@@ -8,11 +8,22 @@
   margin-top: 30px;
 }
 .cover{
+  position: relative;
   height: 430px;
   border-radius: 30px;
   background-position: top center;
   background-size:cover;
   background-repeat: no-repeat;
+}
+.btn-play{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  .play{
+    width: 120px;
+    height: 120px;
+  }
 }
 .title{
   font-size: 12PX;
