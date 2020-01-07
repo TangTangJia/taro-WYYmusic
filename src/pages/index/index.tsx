@@ -13,7 +13,6 @@ interface PageState {
     id: number;
     coverImgUrl: string;
   }>;
-  current: number;
 }
 export default class Index extends Component<{}, PageState> {
 
@@ -22,7 +21,6 @@ export default class Index extends Component<{}, PageState> {
     this.state = {
       bannerList: [],
       songLists: [],
-      current: 0
     }
   }
   componentWillMount() {
