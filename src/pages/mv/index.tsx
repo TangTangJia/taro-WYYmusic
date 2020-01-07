@@ -35,7 +35,9 @@ export default class MV extends Component<{}, PageState> {
             { title: '音乐的力量' },
             { title: '现场' },
             { title: '翻唱' },
-            { title: '广场' }
+            { title: '广场' },
+            { title: '生活' },
+            { title: '游戏' }
           ]}
           onClick={this.handleClick}
         >

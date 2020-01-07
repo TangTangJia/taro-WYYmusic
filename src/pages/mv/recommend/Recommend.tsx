@@ -1,5 +1,5 @@
-import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Image, Text } from '@tarojs/components'
+import Taro, { Component } from '@tarojs/taro'
+import { View, Image } from '@tarojs/components'
 import './recommend.scss'
 
 interface PageState {
