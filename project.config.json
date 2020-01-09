@@ -52,6 +52,19 @@
 					"id": -1,
 					"name": "pages/login/index",
 					"pathName": "pages/login/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/dailySongs/index",
+					"pathName": "pages/dailySongs/index",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
 					"scene": null
 				}
 			]
