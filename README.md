@@ -18,3 +18,4 @@
 ![登录](./example/1.png)
 ![首页](./example/3.png)
 ![视频](./example/2.png)
+![每日歌曲推荐](./example/4.png)
