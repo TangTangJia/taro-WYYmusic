@@ -27,9 +27,10 @@ class App extends Component {
   componentDidCatchError() { }
   config: Config = {
     pages: [
-      'pages/login/index',
       'pages/index/index',
+      'pages/login/index',
       'pages/mv/index',
+      'pages/dailySongs/index'
     ],
     window: {
       backgroundTextStyle: 'light',

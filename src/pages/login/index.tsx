@@ -64,8 +64,14 @@ export default class Login extends Component<{}, PageState> {
     })
       .then(res => {
         if (res.data.code === 200) {
+          Taro.setStorageSync('cookie', res.data.token)
           Taro.navigateTo({
             url: '/pages/index/index'
+          })
+        } else {
+          Taro.atMessage({
+            'message': res.data.message,
+            'type': "error",
           })
         }
       })

@@ -1,5 +1,6 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text, Image, Swiper, SwiperItem } from '@tarojs/components'
+import { AtMessage } from 'taro-ui'
 import Footer from "../../components/Footer"
 import './index.scss'
 
@@ -65,13 +66,33 @@ export default class Index extends Component<{}, PageState> {
         })
       })
   }
+  // 跳转
+  navigateTo = (type: string) => {
+    switch (type) {
+      case 'songs':
+        if (Taro.getStorageSync('cookie') === '') {
+          Taro.atMessage({
+            'message': '请先登录',
+            'type': "error",
+          })
+          return
+        }
+        Taro.navigateTo({
+          url: '/pages/dailySongs/index'
+        })
+        break;
 
+      default:
+        break;
+    }
+  }
   config: Config = {
     navigationBarTitleText: '首页'
   }
   render() {
     return (
       <View className='index'>
+        <AtMessage />
         <View className='top'>
           {/* 轮播 */}
           <View className='banner'>
@@ -94,7 +115,7 @@ export default class Index extends Component<{}, PageState> {
           </View>
           {/* 标签 */}
           <View className='tags'>
-            <View className='item'>
+            <View className='item' onClick={(): void => this.navigateTo('songs')}>
               <View className='icon'>
                 <Image src={require('../../assets/images/temp/zhibo-white.png')} className='img' />
               </View>

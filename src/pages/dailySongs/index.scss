@@ -1,0 +1,122 @@
+.dailySongs{
+  position: relative;
+  height: 100vh;
+  .cover{
+    height: 452px;
+    padding: 0 30px;
+    padding-top: 180px;
+    background-size: 100%;
+    background-position: top center;
+    // .btn-back{
+    //   width: 50px;
+    //   height: 50px;
+    //   background: url('../../assets/images/temp/back.png') no-repeat;
+    //   background-size: 100%;
+    //   margin-bottom: 100px;
+    // }
+    .time{
+      color: #fff;
+      .month{
+        font-size: 30PX;
+      }
+      .day{
+        font-size:14PX;
+      }
+    }
+    .des{
+      color: #d3ccca;
+      font-size: 14PX;
+      margin-top: 20px;
+    }
+  }
+  .songList{
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    top: 28%;
+    left: 0;
+    background-color: #fff;
+    border-radius: 50px 50px 0 0;
+    box-sizing: border-box;
+    .btns{
+      display: flex;
+      padding: 0 30px;
+      padding-top: 50px;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 70px;
+    }
+    .play{
+      display: flex;
+      align-items: center;
+      font-size: 18PX;
+      font-weight: bold;
+    }
+    .icon-paly-all{
+      width: 50px;
+      height: 50px;
+      margin-right: 20px;
+      background: url('../../assets/images/temp/pl-playall.png') no-repeat;
+      background-size: 100%;
+    }
+    .select{
+      display: flex;
+      align-items: center;
+      font-size: 16PX;
+    }
+    .icon-select-more{
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      background: url('../../assets/images/temp/select.png') no-repeat;
+      background-size: 100%;
+    }
+    .list{
+      padding-left: 30px;
+      .item{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+        .item-left{
+          display: flex;
+          .pic{
+            margin-right: 30px;
+            .pic-image{
+              width: 100px;
+              height: 100px;
+              border-radius: 20px;
+            }
+          }
+          .info{
+            .name{
+              font-size: 16PX;
+              font-weight: bold;
+              margin-bottom: 10px;
+            }
+            .singer{
+              color: #8e8e8e;
+              font-size: 14PX;
+            }
+          }
+        }
+        .item-right{
+          display: flex;
+          font-size: 0;
+          align-items: center;
+          .btn-play{
+            width: 80px;
+            height: 68px;
+            background: url('../../assets/images/temp/tv.png') no-repeat;
+            background-size: 100%;
+          }
+          .btn-more{
+            width: 80px;
+            height: 60px;
+            background: url('../../assets/images/temp/more.png') no-repeat;
+            background-size: 100%;
+          }
+        }
+      }
+    }
+  }
+}
