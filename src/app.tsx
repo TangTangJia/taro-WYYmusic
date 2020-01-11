@@ -27,8 +27,9 @@ class App extends Component {
   componentDidCatchError() { }
   config: Config = {
     pages: [
-      'pages/index/index',
       'pages/login/index',
+      'pages/play/index',
+      'pages/index/index',
       'pages/mv/index',
       'pages/dailySongs/index'
     ],
