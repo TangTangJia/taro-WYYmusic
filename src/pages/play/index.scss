@@ -8,8 +8,8 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    filter: blur(20px);
-    transform: scale(1.2);
+    filter: blur(50px);
+    transform: scale(2);
   }
   .content{
     position: absolute;
@@ -22,15 +22,18 @@
       color: #ffffff;
     }
     .play-hand{
+      position: absolute;
+      left: 50%;
+      top: 0;
       width:216px;
       height:340px;
-      margin-left: 50%;
       background: url('../../assets/images/aag.png') no-repeat;
       background-size: 100%;
       transform: rotate(-30deg);
-      transition: all 1s;
+      transition: all .2s linear;
       &.playing{
-        margin-left: 40%;
+        top: 0;
+        left: 40%;
         transform: rotate(0);
       }
     }
@@ -39,10 +42,10 @@
       width: 710px;
       height: 710px;
       margin: 0 auto;
-      margin-top: -100px;
+      margin-top:230px;
       justify-content: center;
       align-items: center;
-      background-color: #343c4d;
+      background-color: rgba(72,84,101,.6);
       border-radius: 50%;
     }
     .cover{
@@ -55,10 +58,59 @@
       background: url('../../assets/images/temp/play.png') no-repeat;
       background-size: 100%;
       border-radius: 50%;
+      &.circle{
+       animation: circle 5s linear infinite;
+      }
+      @keyframes circle {
+        100%{
+          transform: rotate(360deg);
+        }
+      }
       .cover-img{
         width: 380px;
-        height: 440px;
+        height: 380px;
         border-radius: 50%;
+      }
+    }
+    .slider{
+      padding: 0 20px;
+      margin-top: 100px;
+    }
+    .operat{
+      display: flex;
+      padding: 0 90px;
+      align-items: center;
+      justify-content: space-between;
+      .btn-replay{
+        width: 90px;
+        height: 80px;
+        background: url('../../assets/images/song/icn_loop_mode.png') no-repeat;
+        background-size: 100%;
+      }
+      .btn-pre{
+        width: 60px;
+        height: 60px;
+        background: url('../../assets/images/song/ajh.png') no-repeat;
+        background-size: 100%;
+      }
+      .btn-play{
+        width: 128px;
+        height: 128px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        border-radius: 50%;
+      }
+      .btn-next{
+        width: 60px;
+        height: 60px;
+        background: url('../../assets/images/song/ajb.png') no-repeat;
+        background-size: 100%;
+      }
+      .btn-more{
+        width: 80px;
+        height: 80px;
+        background: url('../../assets/images/song/icn_shuffle_mode.png') no-repeat;
+        background-size: 100%;
       }
     }
   }
